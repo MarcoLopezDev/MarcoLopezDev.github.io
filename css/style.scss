@@ -1,0 +1,347 @@
+$blanco:white;
+
+body{
+    margin: 0;
+    background-color: #10002B;
+    font-family: 'Mulish', sans-serif;
+}
+* {
+    box-sizing: border-box;
+  }
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: #10002B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__img{
+    width: 360px;
+    height: 70px;
+    margin-left: 30px;    
+    opacity: 0.9;
+    transition: opacity 1s, height 2s, width 2s, transform 2s;
+    /* transition-delay: 2s; */
+}
+
+.header__img:hover{
+    /* opacity: 0.3; */
+    /* height: 90px;
+    width: 390px; */
+    /* transform: rotate(-2deg); */
+    /* transform: translate(10px,0); */
+    transform: scale(1.1);
+    /* transform: rotate(90deg); */
+    
+}
+
+.header__menu{
+    margin-right: 30px;
+}
+
+.header__menu--profile{
+    margin-right: 8px;
+
+    display: flex;
+    align-items: center;
+}
+.header__menu--profile img{
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+
+}
+.header__menu--profile p{
+    color: $blanco;
+    margin: 0;
+}
+
+.header__menu ul{
+    display: none;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    margin:  0 0 0 -14px;
+}
+.header__menu ul li{
+    margin: 10px 0px;
+}
+
+.header__menu ul li a{
+    color: white;    
+    text-decoration: none;
+}
+
+.header__menu ul li a:hover{
+    text-decoration:underline;
+}
+
+.header__menu:hover ul, ul:hover{
+    display: block;
+}
+
+.main{
+    @extend .flex;
+    height: 600px;
+    background-image: url("https://img.fotocommunity.com/atrapando-cielos-panoramicos-7524fcf8-fb7b-4fd5-8b2b-773e4931e982.jpg?height=500");
+    background-size: 1500px ;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    object-fit: cover;
+    // display: flex;
+    width: 100%;
+    // justify-content: center;
+    align-items: center;
+}
+.main__subcontainer{
+    width: 100%;
+}
+
+.main__title{
+    @extend .flex;
+    color: white;
+    font-size: 25px;
+    // display: flex;
+    // justify-content: center;
+    align-items: center;
+}
+
+.main__input-container{
+        // display: flex;
+        @extend .flex;
+        // justify-content: center;
+        align-items: center;
+        
+}
+
+.input{
+    height: 30px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Mulish', sans-serif;
+    padding: 0px 20px;
+    outline: none;
+    // display: flex;
+    // justify-content: center;
+    @extend .flex;
+    margin:0;
+}
+::placeholder{
+    color: white;
+}
+
+.categories__title {
+    background: #10002B;
+    color: white;
+    font-size: 16px;
+    margin-top: -16px;
+    position: absolute;
+    padding-left: 30px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  
+.carousel{
+    margin-top: 50px;
+    width: 100%;
+    overflow: scroll;
+    padding-left: 30px;
+    position: relative;  
+    padding-top: 10px;
+}
+
+.carousel__container{
+    transition: 450ms -webkit-transform;
+    transition: 450ms transform;
+    transition: 450ms transform, 450ms -webkit-transform;
+    font-size: 0;
+    white-space: nowrap;
+    margin: 70px 0;
+    padding-bottom: 10px;
+}
+.carousel__container:hover .carousel-item {
+    opacity: 0.3;
+}
+.carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+.carousel-item{
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+    position: relative;
+}
+
+.carousel-item:hover ~ .carousel-item{
+    transform: translate3d(100px, 0, 0);
+}
+
+.carousel-item__img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.carousel-item__details{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    font-size: 10px;
+    color: white;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: 200px;
+    // display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    @extend .flex;
+}
+
+
+.carrousel-item__img-options{
+    width: 30px;
+    height: 30px;
+}
+.carousel__container:hover .carousel-item:hover  .carousel-item__details  /*.carousel-item__details*/  {
+    opacity: 1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;   
+    background:rgba(255,255,255,.4);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar:hover {
+    background: #b3b3b3;
+    box-shadow: 002px1pxrgba(0, 0, 0, 0.2);
+  }
+  ::-webkit-scrollbar:hover:active {
+    background: #999;
+  }
+/*
+
+div{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: width 2s;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example{
+    0% {left:0px;top:0px}
+    25% {left:200px;top:0px}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+div:hover{
+    width: 300px;
+}
+*/
+
+.discord{
+    width: 100%;
+    height: 400px;
+    // display: flex;
+    // justify-content: center;
+    @extend .flex;
+    align-items: center;
+}
+.discord__container{
+    background-color: #36393F;
+    height: 240px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0px 4px 22px 5px rgba(0,0,0,0.6);
+}
+
+.discord__card--title{
+    font-size: 26px;
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    @extend .flex;
+    // display: flex;
+    // justify-content: center;
+}
+.discord__card--img{
+    height: 90px;
+    width: 120px;
+    align-self: center;
+}
+
+.animated{
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+@keyframes pulse{
+    0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+.pulse{
+    animation-name: pulse;
+    animation-duration: 1s;
+}
+
+
+.discord__card--button{
+    background-color: #7289DA;
+    margin:0;
+    height: 40px;
+    width: 90%;
+    align-self: center;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    @extend .flex;
+    // display: flex;
+    // justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    cursor: pointer;
+    
+}
